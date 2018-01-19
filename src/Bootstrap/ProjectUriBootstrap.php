@@ -15,6 +15,7 @@ use KiwiSuite\Application\Bootstrap\BootstrapInterface;
 use KiwiSuite\Application\ConfiguratorItem\ConfiguratorRegistry;
 use KiwiSuite\Application\Service\ServiceRegistry;
 use KiwiSuite\ProjectUri\Factory\ProjectUriFactory;
+use KiwiSuite\ProjectUri\Middleware\ProjectUriCheckMiddleware;
 use KiwiSuite\ProjectUri\ProjectUri;
 use KiwiSuite\ServiceManager\ServiceManager;
 
@@ -27,6 +28,7 @@ final class ProjectUriBootstrap implements BootstrapInterface
     public function configure(ConfiguratorRegistry $configuratorRegistry): void
     {
         $configuratorRegistry->getConfigurator('serviceManagerConfigurator')->addFactory(ProjectUri::class, ProjectUriFactory::class);
+        $configuratorRegistry->getConfigurator('middlewareConfigurator')->addFactory(ProjectUriCheckMiddleware::class);
     }
 
     /**
