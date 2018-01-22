@@ -30,11 +30,11 @@ final class ProjectUriFactory implements FactoryInterface
      */
     public function __invoke(ServiceManagerInterface $container, $requestedName, array $options = null)
     {
-        $possibleUrls = $container->get(Config::class)->get('project.possible_urls', []);
+        $possibleUrls = $container->get(Config::class)->get('project-uri.possibleUrls', []);
         if (!\is_array($possibleUrls)) {
             $possibleUrls = [];
         }
-        $possibleUrls[] = $container->get(Config::class)->get('project.main_url', '');
+        $possibleUrls[] = $container->get(Config::class)->get('project-uri.mainUrl', '');
         $possibleUrls = \array_unique(\array_values($possibleUrls));
         $possibleUrls = \array_filter($possibleUrls);
         $possibleUrls = \array_map(function ($value) {
@@ -42,7 +42,7 @@ final class ProjectUriFactory implements FactoryInterface
         }, $possibleUrls);
 
         return new ProjectUri(
-            new Uri(\rtrim($container->get(Config::class)->get('project.main_url', ''), '/')),
+            new Uri(\rtrim($container->get(Config::class)->get('project-uri.mainUrl', ''), '/')),
             $possibleUrls
         );
     }

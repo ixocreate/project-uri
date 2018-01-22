@@ -41,6 +41,9 @@ final class ProjectUriCheckMiddleware implements MiddlewareInterface
             return $handler->handle($request->withUri($uri));
         }
 
+        var_dump($this->projectUri->getMainUrl());
+        die();
+
         return new RedirectResponse($this->projectUri->getMainUrl());
     }
 }

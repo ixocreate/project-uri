@@ -52,9 +52,9 @@ final class ProjectUriBootstrap implements BootstrapInterface
     public function getDefaultConfig(): ?array
     {
         return [
-            'project' => [
-                'main_url' => '',
-                'possible_urls' => [],
+            'project-uri' => [
+                'mainUrl' => '',
+                'possibleUrls' => [],
 
             ],
         ];
