@@ -41,6 +41,7 @@ final class ProjectUriFactory implements FactoryInterface
             return new Uri(\rtrim($value, '/'));
         }, $possibleUrls);
 
+        //TODO check absolute url
         return new ProjectUri(
             new Uri(\rtrim($container->get(Config::class)->get('project-uri.mainUrl', ''), '/')),
             $possibleUrls
