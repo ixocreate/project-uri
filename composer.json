@@ -19,6 +19,7 @@
         "friendsofphp/php-cs-fixer": "^2.5",
         "kiwi-suite/application": "dev-develop",
         "zendframework/zend-diactoros": "^1.7",
+        "kiwi-suite/contract": "dev-develop",
         "http-interop/http-server-middleware": "^1.0"
     },
     "autoload": {
