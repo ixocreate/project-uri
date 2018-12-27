@@ -1,10 +1,7 @@
 <?php
 /**
- * kiwi-suite/database (https://github.com/kiwi-suite/project-uri)
- *
- * @package kiwi-suite/project-uri
- * @see https://github.com/kiwi-suite/project-uri
- * @copyright Copyright (c) 2010 - 2018 kiwi suite GmbH
+ * @link https://github.com/ixocreate
+ * @copyright IXOCREATE GmbH
  * @license MIT License
  */
 

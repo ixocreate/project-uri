@@ -16,6 +16,7 @@
         "psr/http-message": "^1.0"
     },
     "require-dev": {
+        "ixocreate/coding-standard": "^1.0",
         "phpunit/phpunit": "^6.0.6",
         "zendframework/zend-diactoros": "^1.7",
         "http-interop/http-server-middleware": "^1.0",
@@ -31,5 +32,8 @@
             "IxocreateMisc\\ProjectUri\\": "tests/misc/",
             "IxocreateTest\\ProjectUri\\": "tests/src/"
         }
+    },
+    "scripts": {
+        "fix-cs": "vendor/friendsofphp/php-cs-fixer/php-cs-fixer fix --config vendor/ixocreate/coding-standard/.php_cs"
     }
 }
