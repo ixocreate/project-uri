@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
-namespace KiwiSuite\ProjectUri;
+namespace Ixocreate\ProjectUri;
 
-use KiwiSuite\ApplicationHttp\Middleware\MiddlewareConfigurator;
-use KiwiSuite\ProjectUri\Middleware\ProjectUriCheckMiddleware;
+use Ixocreate\ApplicationHttp\Middleware\MiddlewareConfigurator;
+use Ixocreate\ProjectUri\Middleware\ProjectUriCheckMiddleware;
 
 /** @var MiddlewareConfigurator $middleware */
 

@@ -9,12 +9,12 @@
  */
 
 declare(strict_types=1);
-namespace KiwiSuite\ProjectUri\Factory;
+namespace Ixocreate\ProjectUri\Factory;
 
-use KiwiSuite\Config\Config;
-use KiwiSuite\Contract\ServiceManager\FactoryInterface;
-use KiwiSuite\Contract\ServiceManager\ServiceManagerInterface;
-use KiwiSuite\ProjectUri\ProjectUri;
+use Ixocreate\Config\Config;
+use Ixocreate\Contract\ServiceManager\FactoryInterface;
+use Ixocreate\Contract\ServiceManager\ServiceManagerInterface;
+use Ixocreate\ProjectUri\ProjectUri;
 use Zend\Diactoros\Uri;
 
 final class ProjectUriFactory implements FactoryInterface

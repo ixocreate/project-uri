@@ -9,9 +9,9 @@
  */
 
 declare(strict_types=1);
-namespace KiwiSuite\ProjectUri\Middleware;
+namespace Ixocreate\ProjectUri\Middleware;
 
-use KiwiSuite\ProjectUri\ProjectUri;
+use Ixocreate\ProjectUri\ProjectUri;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\MiddlewareInterface;

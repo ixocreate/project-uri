@@ -10,12 +10,12 @@
 
 declare(strict_types=1);
 
-namespace KiwiSuite\ProjectUri;
+namespace Ixocreate\ProjectUri;
 
-use KiwiSuite\Contract\Application\ConfiguratorRegistryInterface;
-use KiwiSuite\Contract\Application\PackageInterface;
-use KiwiSuite\Contract\Application\ServiceRegistryInterface;
-use KiwiSuite\Contract\ServiceManager\ServiceManagerInterface;
+use Ixocreate\Contract\Application\ConfiguratorRegistryInterface;
+use Ixocreate\Contract\Application\PackageInterface;
+use Ixocreate\Contract\Application\ServiceRegistryInterface;
+use Ixocreate\Contract\ServiceManager\ServiceManagerInterface;
 
 final class Package implements PackageInterface
 {

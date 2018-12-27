@@ -24,13 +24,13 @@
     },
     "autoload": {
         "psr-4": {
-            "KiwiSuite\\ProjectUri\\": "src/"
+            "Ixocreate\\ProjectUri\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "KiwiSuiteMisc\\ProjectUri\\": "tests/misc/",
-            "KiwiSuiteTest\\ProjectUri\\": "tests/src/"
+            "IxocreateMisc\\ProjectUri\\": "tests/misc/",
+            "IxocreateTest\\ProjectUri\\": "tests/src/"
         }
     }
 }

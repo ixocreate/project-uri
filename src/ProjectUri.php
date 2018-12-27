@@ -9,7 +9,7 @@
  */
 
 declare(strict_types=1);
-namespace KiwiSuite\ProjectUri;
+namespace Ixocreate\ProjectUri;
 
 use Psr\Http\Message\UriInterface;
 
