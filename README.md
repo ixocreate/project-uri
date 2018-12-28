@@ -1,6 +1,6 @@
 # IXOCREATE project-uri
 
-[![Build Status](https://travis-ci.org/ixocreate/project-uri.svg?branch=master)](https://travis-ci.org/ixocreate/project-uri)
+[![Build Status](https://travis-ci.com/ixocreate/project-uri.svg?branch=master)](https://travis-ci.com/ixocreate/project-uri)
 [![Coverage Status](https://coveralls.io/repos/github/ixocreate/project-uri/badge.svg?branch=develop)](https://coveralls.io/github/ixocreate/project-uri?branch=develop)
 [![Packagist](https://img.shields.io/packagist/v/ixocreate/project-uri.svg)](https://packagist.org/packages/ixocreate/project-uri)
 [![Packagist Pre Release](https://img.shields.io/packagist/vpre/ixocreate/project-uri.svg)](https://packagist.org/packages/ixocreate/project-uri)
