@@ -12,15 +12,13 @@
     "prefer-stable": true,
     "require": {
         "php": "^7.1",
-        "ixocreate/contract": "dev-develop",
-        "psr/http-message": "^1.0"
+        "ixocreate/contract": "=1.0.0-alpha1",
+        "ixocreate/config": "=1.0.0-alpha1",
+        "zendframework/zend-diactoros": "^1.7"
     },
     "require-dev": {
         "ixocreate/coding-standard": "^1.0",
-        "phpunit/phpunit": "^6.0.6",
-        "zendframework/zend-diactoros": "^1.7",
-        "http-interop/http-server-middleware": "^1.0",
-        "ixocreate/application": "dev-develop"
+        "phpunit/phpunit": "^6.0.6"
     },
     "autoload": {
         "psr-4": {
