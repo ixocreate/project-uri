@@ -12,8 +12,8 @@
     "prefer-stable": true,
     "require": {
         "php": "^7.1",
-        "ixocreate/contract": "=1.0.0-alpha2",
-        "ixocreate/config": "=1.0.0-alpha2",
+        "ixocreate/contract": "dev-develop",
+        "ixocreate/config": "dev-develop",
         "zendframework/zend-diactoros": "^1.7"
     },
     "require-dev": {
