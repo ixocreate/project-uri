@@ -31,6 +31,6 @@ final class ProjectUriBootstrapItem implements BootstrapItemInterface
      */
     public function getFileName(): string
     {
-        return 'project_uri.php';
+        return 'project-uri.php';
     }
 }
