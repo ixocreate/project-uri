@@ -9,40 +9,65 @@ declare(strict_types=1);
 
 namespace Ixocreate\ProjectUri;
 
+use Ixocreate\Contract\Application\SerializableServiceInterface;
 use Psr\Http\Message\UriInterface;
 
-final class ProjectUri
+final class ProjectUri implements SerializableServiceInterface
 {
     /**
      * @var UriInterface
      */
-    private $mainUrl;
+    private $mainUri;
 
     /**
      * @var UriInterface[]
      */
-    private $possibleUrls;
+    private $alternativeUris;
 
-    public function __construct(UriInterface $mainUrl, array $possibleUrls)
+    public function __construct(ProjectUriConfigurator $configurator)
     {
-        $this->mainUrl = $mainUrl;
-        $this->possibleUrls = $possibleUrls;
+        $this->mainUri = $configurator->getMainUri();
+        $this->alternativeUris = $configurator->getAlternativeUris();
+        $this->alternativeUris['mainUri'] = $this->mainUri;
     }
 
     /**
      * @return UriInterface
      */
+    public function getMainUri(): UriInterface
+    {
+        return $this->mainUri;
+    }
+
+    /**
+     * @return UriInterface
+     * @deprecated
+     */
     public function getMainUrl(): UriInterface
     {
-        return $this->mainUrl;
+        return $this->mainUri;
     }
 
     /**
      * @return UriInterface[]
      */
+    public function getAlternativeUris(): array
+    {
+        return $this->alternativeUris;
+    }
+
+    public function getAlternativeUri($name): UriInterface
+    {
+        return $this->alternativeUris[$name];
+    }
+
+    /**
+     * @return UriInterface[]
+     * * @deprecated
+     */
     public function getPossibleUrls(): array
     {
-        return $this->possibleUrls;
+        return $this->alternativeUris;
     }
 
     /**
@@ -51,7 +76,7 @@ final class ProjectUri
      */
     public function isValidUrl(UriInterface $uri) : bool
     {
-        foreach ($this->possibleUrls as $possibleUrl) {
+        foreach ($this->alternativeUris as $possibleUrl) {
             if ($uri->getHost() !== $possibleUrl->getHost()) {
                 continue;
             }
@@ -83,7 +108,7 @@ final class ProjectUri
 
     public function getPathWithoutBase(UriInterface $uri) : string
     {
-        foreach ($this->possibleUrls as $possibleUrl) {
+        foreach ($this->alternativeUris as $possibleUrl) {
             if ($uri->getHost() !== $possibleUrl->getHost()) {
                 continue;
             }
@@ -112,6 +137,21 @@ final class ProjectUri
             return $uri->getPath();
         }
 
-        return "";
+        return '';
+    }
+
+    public function serialize()
+    {
+        return \serialize([
+            'mainUri' => $this->mainUri,
+            'alternativeUris' => $this->alternativeUris
+        ]);
+    }
+
+    public function unserialize($serialized)
+    {
+        $data = \unserialize($serialized);
+        $this->mainUri = $data['mainUri'];
+        $this->mainUri = $data['alternativeUris'];
     }
 }

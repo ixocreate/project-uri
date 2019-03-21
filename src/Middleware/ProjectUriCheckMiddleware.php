@@ -24,7 +24,7 @@ final class ProjectUriCheckMiddleware implements MiddlewareInterface
     private $projectUri;
 
     /**
-     * ProjectCheckMiddleware constructor.
+     * ProjectUriCheckMiddleware constructor.
      * @param ProjectUri $projectUri
      */
     public function __construct(ProjectUri $projectUri)
@@ -32,13 +32,17 @@ final class ProjectUriCheckMiddleware implements MiddlewareInterface
         $this->projectUri = $projectUri;
     }
 
+    /**
+     * @param ServerRequestInterface $request
+     * @param RequestHandlerInterface $handler
+     * @return ResponseInterface
+     */
     public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
     {
         if ($this->projectUri->isValidUrl($request->getUri())) {
-            $uri = $request->getUri()->withPath($this->projectUri->getPathWithoutBase($request->getUri()));
-            return $handler->handle($request->withUri($uri));
+            return $handler->handle($request);
         }
 
-        return new RedirectResponse($this->projectUri->getMainUrl());
+        return new RedirectResponse($this->projectUri->getMainUri());
     }
 }
