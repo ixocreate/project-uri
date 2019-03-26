@@ -152,6 +152,6 @@ final class ProjectUri implements SerializableServiceInterface
     {
         $data = \unserialize($serialized);
         $this->mainUri = $data['mainUri'];
-        $this->mainUri = $data['alternativeUris'];
+        $this->alternativeUris = $data['alternativeUris'];
     }
 }
