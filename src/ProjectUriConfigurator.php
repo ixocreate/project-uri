@@ -1,4 +1,9 @@
 <?php
+/**
+ * @link https://github.com/ixocreate
+ * @copyright IXOCREATE GmbH
+ * @license MIT License
+ */
 
 declare(strict_types=1);
 
@@ -52,7 +57,7 @@ final class ProjectUriConfigurator implements ConfiguratorInterface
 
     public function removeAlternativeUri($name)
     {
-        if (array_key_exists($name, $this->alternativeUris)) {
+        if (\array_key_exists($name, $this->alternativeUris)) {
             unset($this->alternativeUris[$name]);
         }
     }
