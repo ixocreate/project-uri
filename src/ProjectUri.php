@@ -24,11 +24,18 @@ final class ProjectUri implements SerializableServiceInterface
      */
     private $alternativeUris;
 
+    /**
+     * @var UriInterface[]
+     */
+    private $possibleUrls;
+
     public function __construct(ProjectUriConfigurator $configurator)
     {
         $this->mainUri = $configurator->getMainUri();
         $this->alternativeUris = $configurator->getAlternativeUris();
-        $this->alternativeUris['mainUri'] = $this->mainUri;
+
+        $this->possibleUrls = $this->alternativeUris;
+        $this->possibleUrls['mainUri'] = $this->mainUri;
     }
 
     /**
@@ -56,88 +63,88 @@ final class ProjectUri implements SerializableServiceInterface
         return $this->alternativeUris;
     }
 
-    public function getAlternativeUri($name): UriInterface
+    /**
+     * @param string $name
+     * @return UriInterface
+     */
+    public function getAlternativeUri(string $name): ?UriInterface
     {
-        return $this->alternativeUris[$name];
+        if (!empty($this->alternativeUris[$name])) {
+            return $this->alternativeUris[$name];
+        }
+        return null;
     }
 
     /**
      * @return UriInterface[]
-     * * @deprecated
      */
     public function getPossibleUrls(): array
     {
-        return $this->alternativeUris;
+        return $this->possibleUrls;
     }
 
     /**
      * @param UriInterface $uri
      * @return bool
      */
-    public function isValidUrl(UriInterface $uri) : bool
+    public function isValidUrl(UriInterface $uri): bool
     {
-        foreach ($this->alternativeUris as $possibleUrl) {
-            if ($uri->getHost() !== $possibleUrl->getHost()) {
-                continue;
+        foreach ($this->possibleUrls as $possibleUrl) {
+            if ($this->isSubUri($possibleUrl, $uri)) {
+                return true;
             }
-
-            if ($uri->getScheme() !== $possibleUrl->getScheme()) {
-                continue;
-            }
-
-            if ($uri->getPort() !== $possibleUrl->getPort()) {
-                continue;
-            }
-
-            $pathLength = \mb_strlen($possibleUrl->getPath());
-            if ($pathLength > 0) {
-                if (\mb_strlen($uri->getPath()) < $pathLength) {
-                    continue;
-                }
-
-                if (\mb_substr($uri->getPath(), 0, $pathLength) !== $possibleUrl->getPath()) {
-                    continue;
-                }
-            }
-
-            return true;
         }
 
         return false;
     }
 
-    public function getPathWithoutBase(UriInterface $uri) : string
+    /**
+     * @param UriInterface $uri
+     * @return string
+     */
+    public function getPathWithoutBase(UriInterface $uri): string
     {
-        foreach ($this->alternativeUris as $possibleUrl) {
-            if ($uri->getHost() !== $possibleUrl->getHost()) {
-                continue;
-            }
+        foreach ($this->possibleUrls as $possibleUrl) {
+            if ($this->isSubUri($possibleUrl, $uri)) {
 
-            if ($uri->getScheme() !== $possibleUrl->getScheme()) {
-                continue;
-            }
-
-            if ($uri->getPort() !== $possibleUrl->getPort()) {
-                continue;
-            }
-
-            $pathLength = \mb_strlen($possibleUrl->getPath());
-            if ($pathLength > 0) {
-                if (\mb_strlen($uri->getPath()) < $pathLength) {
-                    continue;
+                $pathLength = \mb_strlen($possibleUrl->getPath());
+                if ($pathLength > 0) {
+                    return \mb_substr($uri->getPath(), $pathLength);
                 }
 
-                if (\mb_substr($uri->getPath(), 0, $pathLength) !== $possibleUrl->getPath()) {
-                    continue;
-                }
-
-                return \mb_substr($uri->getPath(), $pathLength);
+                return $uri->getPath();
             }
-
-            return $uri->getPath();
         }
 
         return '';
+    }
+
+    private function isSubUri(UriInterface $base, UriInterface $compare)
+    {
+        if ($compare->getHost() !== $base->getHost()) {
+            return false;
+        }
+
+        if ($compare->getScheme() !== $base->getScheme()) {
+            return false;
+        }
+
+        if ($compare->getPort() !== $base->getPort()) {
+            return false;
+        }
+
+        $pathLength = \mb_strlen($base->getPath());
+        if ($pathLength > 0) {
+            if (\mb_strlen($compare->getPath()) < $pathLength) {
+                return false;
+            }
+
+            if (\mb_substr($compare->getPath(), 0, $pathLength) !== $base->getPath()) {
+                return false;
+            }
+        }
+
+        return true;
     }
 
     public function serialize()
@@ -153,5 +160,8 @@ final class ProjectUri implements SerializableServiceInterface
         $data = \unserialize($serialized);
         $this->mainUri = $data['mainUri'];
         $this->alternativeUris = $data['alternativeUris'];
+
+        $this->possibleUrls = $this->alternativeUris;
+        $this->possibleUrls['mainUri'] = $this->mainUri;
     }
 }

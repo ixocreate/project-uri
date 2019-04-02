@@ -37,25 +37,32 @@ final class ProjectUriConfigurator implements ConfiguratorInterface
     /**
      * @param string $uri
      */
-    public function setMainUri(string $uri)
+    public function setMainUri(string $uri): void
     {
         $this->mainUri = new Uri(\rtrim($uri, '/'));
     }
 
     /**
-     * @return UriInterface|null
+     * @return UriInterface
      */
     public function getMainUri(): UriInterface
     {
         return $this->mainUri;
     }
 
-    public function addAlternativeUri($name, $uri)
+    /**
+     * @param string $name
+     * @param string $uri
+     */
+    public function addAlternativeUri(string $name, string $uri): void
     {
         $this->alternativeUris[$name] = new Uri(\rtrim($uri, '/'));
     }
 
-    public function removeAlternativeUri($name)
+    /**
+     * @param string $name
+     */
+    public function removeAlternativeUri(string $name): void
     {
         if (\array_key_exists($name, $this->alternativeUris)) {
             unset($this->alternativeUris[$name]);
