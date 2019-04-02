@@ -34,7 +34,7 @@ class ProjectUriCheckMiddlewareTest extends TestCase
 
         $middleware = new ProjectUriCheckMiddleware($projectUri);
 
-        $requestHandler = new class implements RequestHandlerInterface {
+        $requestHandler = new class() implements RequestHandlerInterface {
             private $request;
 
             public function handle(ServerRequestInterface $request): ResponseInterface

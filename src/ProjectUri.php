@@ -106,7 +106,6 @@ final class ProjectUri implements SerializableServiceInterface
     {
         foreach ($this->possibleUrls as $possibleUrl) {
             if ($this->isSubUri($possibleUrl, $uri)) {
-
                 $pathLength = \mb_strlen($possibleUrl->getPath());
                 if ($pathLength > 0) {
                     return \mb_substr($uri->getPath(), $pathLength);

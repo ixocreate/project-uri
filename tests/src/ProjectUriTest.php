@@ -1,4 +1,9 @@
 <?php
+/**
+ * @link https://github.com/ixocreate
+ * @copyright IXOCREATE GmbH
+ * @license MIT License
+ */
 
 declare(strict_types=1);
 
@@ -40,7 +45,7 @@ class ProjectUriTest extends TestCase
         $projectUri = new ProjectUri($configurator);
 
         $alternativeUris = [
-            'test' => new Uri('https://project-uri-2.test')
+            'test' => new Uri('https://project-uri-2.test'),
         ];
 
         $this->assertEquals($alternativeUris, $projectUri->getAlternativeUris());
@@ -61,7 +66,7 @@ class ProjectUriTest extends TestCase
 
         $possibleUris = [
             'test' => new Uri('https://project-uri-2.test'),
-            'mainUri' => new Uri('https://project-uri.test')
+            'mainUri' => new Uri('https://project-uri.test'),
         ];
 
         $this->assertEquals($possibleUris, $projectUri->getPossibleUrls());

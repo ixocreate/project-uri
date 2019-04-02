@@ -1,4 +1,9 @@
 <?php
+/**
+ * @link https://github.com/ixocreate
+ * @copyright IXOCREATE GmbH
+ * @license MIT License
+ */
 
 declare(strict_types=1);
 
@@ -51,7 +56,7 @@ class ProjectUriConfiguratorTest extends TestCase
 
         $alternativeUris = [
             'test-1' => new Uri('https://project-uri.test'),
-            'test-2' => new Uri('http://project-uri-2.test')
+            'test-2' => new Uri('http://project-uri-2.test'),
         ];
 
         $this->assertEquals($alternativeUris, $configurator->getAlternativeUris());
@@ -65,7 +70,7 @@ class ProjectUriConfiguratorTest extends TestCase
         $configurator->addAlternativeUri('test-2', 'http://project-uri-2.test');
 
         $alternativeUris = [
-            'test-2' => new Uri('http://project-uri-2.test')
+            'test-2' => new Uri('http://project-uri-2.test'),
         ];
 
         $configurator->removeAlternativeUri('test-1');
@@ -85,6 +90,5 @@ class ProjectUriConfiguratorTest extends TestCase
 
         $configurator = new ProjectUriConfigurator();
         $configurator->registerService($serviceRegistry);
-
     }
 }
