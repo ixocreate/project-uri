@@ -14,13 +14,13 @@
         "php": "^7.1",
         "ixocreate/contract": "dev-develop",
         "ixocreate/config": "dev-develop",
-        "zendframework/zend-diactoros": "^1.7",
-        "vimeo/psalm": "^3.2"
+        "zendframework/zend-diactoros": "^1.7"
     },
     "require-dev": {
         "ixocreate/coding-standard": "^1.0.1",
         "php-coveralls/php-coveralls": "^2.1",
-        "phpunit/phpunit": "^7.0"
+        "phpunit/phpunit": "^7.0",
+        "vimeo/psalm": "^3.2"
     },
     "autoload": {
         "psr-4": {
