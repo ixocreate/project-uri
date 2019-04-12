@@ -84,6 +84,18 @@ final class ProjectUri implements SerializableServiceInterface
     }
 
     /**
+     * @param string $name
+     * @return UriInterface|null
+     */
+    public function getPossibleUri(string $name): ?UriInterface
+    {
+        if (!empty($this->possibleUrls[$name])) {
+            return $this->possibleUrls[$name];
+        }
+        return null;
+    }
+
+    /**
      * @param UriInterface $uri
      * @return bool
      */
