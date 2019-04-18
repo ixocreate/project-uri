@@ -7,13 +7,13 @@
 
 declare(strict_types=1);
 
-namespace Ixocreate\ProjectUri;
+namespace Ixocreate\Package\ProjectUri;
 
-use Ixocreate\Contract\Application\ConfiguratorRegistryInterface;
-use Ixocreate\Contract\Application\PackageInterface;
-use Ixocreate\Contract\Application\ServiceRegistryInterface;
-use Ixocreate\Contract\ServiceManager\ServiceManagerInterface;
-use Ixocreate\ProjectUri\BootstrapItem\ProjectUriBootstrapItem;
+use Ixocreate\Application\ConfiguratorRegistryInterface;
+use Ixocreate\Application\PackageInterface;
+use Ixocreate\Application\ServiceRegistryInterface;
+use Ixocreate\ServiceManager\ServiceManagerInterface;
+use Ixocreate\Package\ProjectUri\BootstrapItem\ProjectUriBootstrapItem;
 
 final class Package implements PackageInterface
 {

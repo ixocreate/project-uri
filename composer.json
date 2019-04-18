@@ -1,6 +1,6 @@
 {
-    "name": "ixocreate/project-uri",
-    "description": "Library to manage the project URI",
+    "name": "ixocreate/project-uri-package",
+    "description": "IXOCREATE URI Package",
     "license": "MIT",
     "type": "library",
     "authors": [
@@ -12,25 +12,24 @@
     "prefer-stable": true,
     "require": {
         "php": "^7.1",
-        "ixocreate/contract": "dev-develop",
-        "ixocreate/config": "dev-develop",
+        "ixocreate/application": "dev-consolidate",
         "zendframework/zend-diactoros": "^1.7"
     },
     "require-dev": {
-        "ixocreate/coding-standard": "^1.0.1",
+        "ixocreate/coding-standard": "^1.0",
         "php-coveralls/php-coveralls": "^2.1",
         "phpunit/phpunit": "^7.0",
         "vimeo/psalm": "^3.2"
     },
     "autoload": {
         "psr-4": {
-            "Ixocreate\\ProjectUri\\": "src/"
+            "Ixocreate\\Package\\ProjectUri\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "IxocreateMisc\\ProjectUri\\": "tests/misc/",
-            "IxocreateTest\\ProjectUri\\": "tests/src/"
+            "Ixocreate\\Misc\\ProjectUri\\": "tests/misc/",
+            "Ixocreate\\Test\\ProjectUri\\": "tests/src/"
         }
     },
     "scripts": {

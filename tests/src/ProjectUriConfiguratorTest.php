@@ -7,11 +7,11 @@
 
 declare(strict_types=1);
 
-namespace IxocreateTest\ProjectUri;
+namespace Ixocreate\Test\ProjectUri;
 
-use Ixocreate\Contract\Application\ServiceRegistryInterface;
-use Ixocreate\ProjectUri\ProjectUri;
-use Ixocreate\ProjectUri\ProjectUriConfigurator;
+use Ixocreate\Application\ServiceRegistryInterface;
+use Ixocreate\Package\ProjectUri\ProjectUri;
+use Ixocreate\Package\ProjectUri\ProjectUriConfigurator;
 use PHPUnit\Framework\TestCase;
 use Zend\Diactoros\Uri;
 

@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
-namespace Ixocreate\ProjectUri;
+namespace Ixocreate\Package\ProjectUri;
 
-use Ixocreate\ApplicationHttp\Middleware\MiddlewareConfigurator;
-use Ixocreate\ProjectUri\Middleware\ProjectUriCheckMiddleware;
+use Ixocreate\Application\Http\Middleware\MiddlewareConfigurator;
+use Ixocreate\Package\ProjectUri\Middleware\ProjectUriCheckMiddleware;
 
 /** @var MiddlewareConfigurator $middleware */
 

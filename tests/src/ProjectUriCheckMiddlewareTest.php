@@ -7,11 +7,11 @@
 
 declare(strict_types=1);
 
-namespace IxocreateTest\ProjectUri;
+namespace Ixocreate\Test\ProjectUri;
 
-use Ixocreate\ProjectUri\Middleware\ProjectUriCheckMiddleware;
-use Ixocreate\ProjectUri\ProjectUri;
-use Ixocreate\ProjectUri\ProjectUriConfigurator;
+use Ixocreate\Package\ProjectUri\Middleware\ProjectUriCheckMiddleware;
+use Ixocreate\Package\ProjectUri\ProjectUri;
+use Ixocreate\Package\ProjectUri\ProjectUriConfigurator;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
@@ -23,7 +23,7 @@ use Zend\Diactoros\Uri;
 class ProjectUriCheckMiddlewareTest extends TestCase
 {
     /**
-     * @covers \Ixocreate\ProjectUri\Middleware\ProjectUriCheckMiddleware
+     * @covers \Ixocreate\Package\ProjectUri\Middleware\ProjectUriCheckMiddleware
      */
     public function testProcess()
     {

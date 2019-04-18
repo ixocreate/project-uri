@@ -7,9 +7,9 @@
 
 declare(strict_types=1);
 
-namespace Ixocreate\ProjectUri;
+namespace Ixocreate\Package\ProjectUri;
 
-use Ixocreate\Contract\Application\SerializableServiceInterface;
+use Ixocreate\Application\SerializableServiceInterface;
 use Psr\Http\Message\UriInterface;
 
 final class ProjectUri implements SerializableServiceInterface

@@ -7,16 +7,16 @@
 
 declare(strict_types=1);
 
-namespace IxocreateTest\ProjectUri;
+namespace Ixocreate\Test\ProjectUri;
 
-use Ixocreate\ProjectUri\BootstrapItem\ProjectUriBootstrapItem;
-use Ixocreate\ProjectUri\ProjectUriConfigurator;
+use Ixocreate\Package\ProjectUri\BootstrapItem\ProjectUriBootstrapItem;
+use Ixocreate\Package\ProjectUri\ProjectUriConfigurator;
 use PHPUnit\Framework\TestCase;
 
 class BootstrapItemTest extends TestCase
 {
     /**
-     * @covers \Ixocreate\ProjectUri\BootstrapItem\ProjectUriBootstrapItem
+     * @covers \Ixocreate\Package\ProjectUri\BootstrapItem\ProjectUriBootstrapItem
      */
     public function testBootstrapItem()
     {

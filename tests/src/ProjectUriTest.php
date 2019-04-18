@@ -7,10 +7,10 @@
 
 declare(strict_types=1);
 
-namespace IxocreateTest\ProjectUri;
+namespace Ixocreate\Test\ProjectUri;
 
-use Ixocreate\ProjectUri\ProjectUri;
-use Ixocreate\ProjectUri\ProjectUriConfigurator;
+use Ixocreate\Package\ProjectUri\ProjectUri;
+use Ixocreate\Package\ProjectUri\ProjectUriConfigurator;
 use PHPUnit\Framework\TestCase;
 use Zend\Diactoros\Uri;
 
@@ -21,7 +21,7 @@ use Zend\Diactoros\Uri;
 class ProjectUriTest extends TestCase
 {
     /**
-     * @covers \Ixocreate\ProjectUri\ProjectUri
+     * @covers \Ixocreate\Package\ProjectUri\ProjectUri
      */
     public function testMainUri()
     {
@@ -109,8 +109,8 @@ class ProjectUriTest extends TestCase
     }
 
     /**
-     * @covers \Ixocreate\ProjectUri\ProjectUri::serialize
-     * @covers \Ixocreate\ProjectUri\ProjectUri::unserialize
+     * @covers \Ixocreate\Package\ProjectUri\ProjectUri::serialize
+     * @covers \Ixocreate\Package\ProjectUri\ProjectUri::unserialize
      */
     public function testSerialization()
     {

@@ -7,13 +7,13 @@
 
 declare(strict_types=1);
 
-namespace IxocreateTest\ProjectUri;
+namespace Ixocreate\Test\ProjectUri;
 
-use Ixocreate\Contract\Application\ConfiguratorRegistryInterface;
-use Ixocreate\Contract\Application\ServiceRegistryInterface;
-use Ixocreate\Contract\ServiceManager\ServiceManagerInterface;
-use Ixocreate\ProjectUri\BootstrapItem\ProjectUriBootstrapItem;
-use Ixocreate\ProjectUri\Package;
+use Ixocreate\Application\ConfiguratorRegistryInterface;
+use Ixocreate\Application\ServiceRegistryInterface;
+use Ixocreate\ServiceManager\ServiceManagerInterface;
+use Ixocreate\Package\ProjectUri\BootstrapItem\ProjectUriBootstrapItem;
+use Ixocreate\Package\ProjectUri\Package;
 use PHPUnit\Framework\TestCase;
 
 class PackageTest extends TestCase

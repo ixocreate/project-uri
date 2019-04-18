@@ -7,9 +7,9 @@
 
 declare(strict_types=1);
 
-namespace Ixocreate\ProjectUri\Middleware;
+namespace Ixocreate\Package\ProjectUri\Middleware;
 
-use Ixocreate\ProjectUri\ProjectUri;
+use Ixocreate\Package\ProjectUri\ProjectUri;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\MiddlewareInterface;

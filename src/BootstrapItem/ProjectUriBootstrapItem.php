@@ -7,11 +7,11 @@
 
 declare(strict_types=1);
 
-namespace Ixocreate\ProjectUri\BootstrapItem;
+namespace Ixocreate\Package\ProjectUri\BootstrapItem;
 
-use Ixocreate\Contract\Application\BootstrapItemInterface;
-use Ixocreate\Contract\Application\ConfiguratorInterface;
-use Ixocreate\ProjectUri\ProjectUriConfigurator;
+use Ixocreate\Application\BootstrapItemInterface;
+use Ixocreate\Application\ConfiguratorInterface;
+use Ixocreate\Package\ProjectUri\ProjectUriConfigurator;
 
 final class ProjectUriBootstrapItem implements BootstrapItemInterface
 {
